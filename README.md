@@ -14,7 +14,7 @@ An interactive data visualization platform built with HTML5, CSS3, JavaScript, a
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://william-osei.github.io/data-dashboard)
+[View Live Demo](https://william-osei.github.io/data-analysis-dashboard)
 
 ## 🛠️ Technologies Used
 
@@ -71,8 +71,8 @@ The dashboard automatically calculates:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/William-osei/data-dashboard.git
-   cd data-dashboard
+   git clone https://github.com/William-osei/data-analysis-dashboard.git
+   cd data-analysis-dashboard
    ```
 
 2. **Open in browser**:
