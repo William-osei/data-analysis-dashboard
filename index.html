@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-chart-line"></i> Data Analysis Dashboard</h1>
+            <p>Interactive data visualization platform with real-time processing</p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="dataSource">Data Source:</label>
+                <select id="dataSource">
+                    <option value="sample">Sample Data</option>
+                    <option value="random">Random Data</option>
+                    <option value="csv">Upload CSV</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <input type="file" id="csvFile" accept=".csv" style="display: none;">
+                <button id="refreshData"><i class="fas fa-sync-alt"></i> Refresh Data</button>
+                <button id="exportData"><i class="fas fa-download"></i> Export CSV</button>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-database"></i>
+                <h3>Total Records</h3>
+                <p id="totalRecords">0</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Average Value</h3>
+                <p id="averageValue">0</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-arrow-up"></i>
+                <h3>Max Value</h3>
+                <p id="maxValue">0</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-arrow-down"></i>
+                <h3>Min Value</h3>
+                <p id="minValue">0</p>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-container">
+                <h3>Line Chart - Trend Analysis</h3>
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Bar Chart - Category Distribution</h3>
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Pie Chart - Data Composition</h3>
+                <canvas id="pieChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Doughnut Chart - Performance Metrics</h3>
+                <canvas id="doughnutChart"></canvas>
+            </div>
+        </div>
+
+        <div class="data-table-section">
+            <h3>Data Table <span id="recordCount">(0 records)</span></h3>
+            <div class="table-controls">
+                <input type="text" id="searchFilter" placeholder="Search data...">
+                <select id="sortBy">
+                    <option value="name">Sort by Name</option>
+                    <option value="value">Sort by Value</option>
+                    <option value="category">Sort by Category</option>
+                </select>
+            </div>
+            <div class="table-container">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Value</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataTableBody">
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
